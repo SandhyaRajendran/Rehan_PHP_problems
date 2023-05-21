@@ -56,3 +56,55 @@ function reverseArray($values){
 // [1, 2, 5, 7, 9, 10] => wrong
 // [11, 3, 6, 3, 6] => wrong
 // [1, 6, 3, 9, 4] => correct
+
+
+//other method
+for ($i =0; $i<count($input)-1; $i++){
+    // print_r($input);
+    if ($input[$i]<= $input[$i + 1]) {
+$a = $input[$i];
+$input[$i] = $input[$i+1];
+$input[$i+1] =$a;
+
+array_push($store, $input);
+print_r($input);
+    }  
+}
+
+$arr = array(2,5,1,7,4);
+for($i = 0; $i < count($arr); $i++ ) {
+    echo $arr[$i];
+ for($j = 0; $j < count($arr)-1; $j++) {
+ if($arr[$j+1] < $arr[$j]){
+ $temp = $arr[$j+1];
+ $arr[$j+1] = $arr[$j];
+ $arr[$j] = $temp;
+ 
+ }
+ }
+}
+print_r($arr);
+
+// $values = [1,2,5];
+function reversingArray($values){
+    $storedValues = [];
+
+    for($i=0; $i<=count($values); $i++){
+        // var_dump($values[$i]);
+        for ($j=0; $j <=count($values) - 2 -$i; $j++) { 
+       
+        if($values[$j] >= $values[$j+1]){
+            array_push($storedValues, $values[$j]);
+        }
+        else{
+            $a = $values[$j];
+            $b = $values[$j+1];
+            $values[$j] = $b;
+            $values[$j+1] = $a;
+        }
+        array_push($storedValues, $values);
+    }
+    }
+    print_r($storedValues);
+}
+reversingArray([1,2,5]);
