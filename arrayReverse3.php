@@ -29,7 +29,7 @@
 // reverseArray($array);
 
 
-// timestamp: 3:00
+
 //$array = [5, 2, 1];
 //$array = [1, 2, 5];
 $array = [4, 1, 2, 5];
